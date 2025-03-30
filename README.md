@@ -53,3 +53,18 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 Lista de lo que puedes añadir
 npx astro add --list
 te aparece la lista.... le agregas el npx y luego la tecnologia 
+
+2 Paso
+https://fontsource.org
+bun Install @fontsource-variable/onest
+
+3 Paso
+https://flowbite.com para los badge
+
+4 Paso
+Fondo
+https://bg.ibelick.com/
+
+5 Paso
+Iconos
+https://svgl.app/
