@@ -9,39 +9,54 @@ import SocialPill from '../components/SocialPill.astro';
 import Github from '../icons/Github.astro';
 import Mail from '../icons/Mail.astro';
 import Experience from '../components/Experience.astro';
+import Maletin from '../icons/Maletin.astro';
+import Code from '../icons/Code.astro';
+import Projects from '../components/Projects.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout title="Porfolio - Carlos Ramirez" description='Carlos Ramirez, programador y desarrollador Full Stack' >
-	<main>
-        <SectionContainer class="w-full lg:w-[800px] mx-auto py-24 ">
+	<main class="px-4 lg:px-24 py-10 flex flex-col gap-y-10">
+        <SectionContainer class="py-24 pb-10">
             <img class="rounded-full size-12 mb-4" src="/public/logo4.jpeg" alt="Carlos Foto">
-            <h1 class="text-white text-4xl font-bold flex flex-row gap-x-4 pb-10">Hola, mi nombre es Carlos Ramirez 
+            <h1 class="text-white text-3xl md:text-4xl lg:text-4xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">Hola, mi nombre es Carlos Ramirez 
                 <a href="https://www.linkedin.com/in/carlos-eduardo-ramirez-espinoza-96006926a/" 
                 target="_blank"
                 rel="noopener"
                 class="flex justify-center items-center "><Badge>Disponible para trabajar</Badge></a></h1>
-            <h2 class="text-2xl opacity-80 text-wrap">"Ingeniero en Informatica recien graduado 👨‍🎓 enfocado en desarrollo <span class="text-amber-200">Full-Stack con React, Node.js y MongoDB.</span> Líder técnico en proyectos académicos y apasionado por crear soluciones web eficientes. Actualmente <span class="text-emerald-100 ">enfocado en dominar TypeScript</span> y arquitecturas escalables."</h2>
-            <nav class="flex gap-x-6 mt-8" >
+            <h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">"Ingeniero en Informatica recien graduado 👨‍🎓 enfocado en desarrollo <span class="text-amber-200">Full-Stack con React, Node.js y MongoDB.</span> Líder técnico en proyectos académicos y apasionado por crear soluciones web eficientes. Actualmente <span class="text-emerald-100 ">enfocado en dominar TypeScript</span> y arquitecturas escalables."</h2>
+            <nav class="flex gap-6 mt-8 flex-wrap " >
                 <SocialPill href="https://www.linkedin.com/in/carlos-eduardo-ramirez-espinoza-96006926a/" >
-                    <Linkeding class="size-6" />
+                    <Linkeding class="size-4 md:size-6" />
                     Linkedin
                 </SocialPill>
                 <SocialPill href="https://github.com/CarlosRa10" >
-                    <Github class="size-6" />
+                    <Github class="size-4 md:size-6" />
                     Github
                 </SocialPill>
-                <SocialPill href="https://github.com/CarlosRa10" >
-                    <Mail class="size-6" />
+                <SocialPill href="mailto:Carloseduardoramirez10@gmail.com" >
+                    <Mail class="size-4 md:size-6" />
                     Carloseduardoramirez10@gmail.com
                 </SocialPill>
             </nav>
         </SectionContainer>
 
-        <SectionContainer>
+        <SectionContainer id="experiencia" >
+            <h2 class="text-2xl font-semibold mb-10 gap-x-3 flex items-center">
+                <Maletin class="size-7" />
+                EXPERIENCIA LABORAL
+            </h2>
             <Experience/>
+        </SectionContainer>
+
+        <SectionContainer id="proyectos" >
+            <h2 class="text-2xl font-semibold mb-10 gap-x-3 flex items-center">
+                <Code class="size-8" />
+                PROYECTOS
+            </h2>
+            <Projects />
         </SectionContainer>
     </main>
 </Layout>

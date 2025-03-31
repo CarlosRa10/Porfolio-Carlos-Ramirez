@@ -1,0 +1,72 @@
+---
+import React from "../icons/React.astro";
+import TypeScript from "../icons/TypeScript.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import NodeJs from "../icons/NodeJs.astro";
+import Express from "../icons/Express.astro";
+import MongoDB from "../icons/MongoDB.astro";
+
+const TAGS = {
+    REACT:{
+        name:"React",
+        class:"bg-blue-950 text-white",
+        icon: React,
+    },
+    TYPESCRIPT:{
+        name:"TypeScript",
+        class:"bg-green-950 text-white",
+        icon: TypeScript,
+    },
+    TAILWIND:{
+        name:"Tailwind",
+        class:"bg-[#003159] text-white",
+        icon: Tailwind,
+    },
+    NODEJS:{
+        name:"Node.js",
+        class:"bg-green-950 text-white",
+        icon: NodeJs,
+    },
+    EXPRESS:{
+        name:"Express",
+        class:"bg-white text-black",
+        icon: Express,
+    },
+    MONGODB:{
+        name:"MongoDB",
+        class:"bg-purple-950 text-white",
+        icon: MongoDB,
+    },
+}
+
+const PROJECTS = [
+  {
+    title: "Gestor de Tareas - Club Crecimiento tecnológico",
+    description: "Aplicación web desarrollada para optimizar la gestión de proyectos y actividades del Club Crecimiento Tecnológico de la Universidad Alejandro de Humboldt. Centraliza la asignación, seguimiento y priorización de tareas entre miembros, mejorando la colaboración y productividad del equipo.",
+    link: "https://gestor-de-tareas-gamma.vercel.app/auth/login",
+    github: "https://astro.build",
+    image: "public/proyecto1.webp",
+    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND,  TAGS.NODEJS, TAGS.EXPRESS, TAGS.MONGODB],
+  },
+];
+---
+
+{
+    PROJECTS.map(({image,title,description,tags})=>(
+        <article>
+            <h3 class="text-2xl font-semibold text-amber-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty" >{description}</p>
+            <ul class="flex gap-x-2 flex-row mb-2 items-center">
+                {tags.map((tag)=>(
+                <li>
+                    <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-2 px-2`}>
+                    <tag.icon class="size-5"/>
+                    {tag.name}
+                    </span>
+                </li>
+                ))}
+            </ul>
+            <img class="rounded shadow-2xl shadow-white/10 " src={image} alt={`Captura de pantalla del proyecto ${image}`} />
+        </article>
+    ))
+}
