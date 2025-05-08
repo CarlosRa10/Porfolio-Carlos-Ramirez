@@ -5,6 +5,8 @@ import Tailwind from "../icons/Tailwind.astro";
 import NodeJs from "../icons/NodeJs.astro";
 import Express from "../icons/Express.astro";
 import MongoDB from "../icons/MongoDB.astro";
+import Netlify from "../icons/Netlify.astro";
+import Zod from "../icons/Zod.astro";
 
 const TAGS = {
     REACT:{
@@ -37,6 +39,16 @@ const TAGS = {
         class:"bg-purple-950 text-white",
         icon: MongoDB,
     },
+    NETLIFY:{
+        name:"Netlify",
+        class:"bg-blue-950 text-white",
+        icon: Netlify,
+    },
+    ZOD:{
+        name:"Zod",
+        class:"bg-white text-black",
+        icon: Zod,
+    },
 }
 
 const PROJECTS = [
@@ -47,6 +59,14 @@ const PROJECTS = [
     github: "https://astro.build",
     image: "/proyecto1.webp",
     tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND,  TAGS.NODEJS, TAGS.EXPRESS, TAGS.MONGODB],
+  },
+  {
+    title: "Cotizador de Criptomonedas",
+    description: "Aplicación web que permite a los usuarios consultar el precio de diferentes criptomonedas en tiempo real. Utiliza la API de CoinDesk para obtener datos actualizados y ofrece una interfaz intuitiva para facilitar la navegación y la búsqueda de información.",
+    link: "https://imaginative-cobbler-ca3c7d.netlify.app/",
+    github: "https://astro.build",
+    image: "/proyecto2.webp",
+    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.NODEJS, TAGS.NETLIFY, TAGS.ZOD],
   },
 ];
 ---

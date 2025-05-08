@@ -1,10 +1,56 @@
+---
+// src/components/Header.astro
 
-<header class="flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto" >
-    <nav class="flex flex-row gap-x-10 opacity-90">
-        <a href="#top">Inicio</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#sobre-mi">Sobre Mí</a>
-        <a href="#contacto">Contacto</a>
+
+// Opcional: Define props si necesitas personalización
+export interface Props {
+  links?: Array<{ href: string; text: string }>;
+}
+const { links = [
+  { href: "#top", text: "Inicio" },
+  { href: "#experiencia", text: "Experiencia" },
+  { href: "#proyectos", text: "Proyectos" },
+  { href: "#sobre-mi", text: "Sobre Mí" },
+  { href: "#contacto", text: "Contacto" }
+] } = Astro.props;
+---
+
+<header 
+  id="mainHeader" 
+  class="w-full sticky top-0 z-50 transition-all duration-500 ease-in-out">
+  <div class="flex justify-center w-full px-4">
+    <nav class="flex justify-center items-center py-5 w-full max-w-[1120px] mx-auto gap-2 md:gap-6 lg:gap-8">
+      {links.map(link => (
+        <a 
+          href={link.href} 
+          class="px-1 py-1 whitespace-nowrap hover:text-amber-300 transition"
+        >
+          {link.text}
+        </a>
+      ))}
     </nav>
+  </div>
 </header>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('mainHeader');
+    
+    window.addEventListener('scroll', () => {
+      const shouldApplyStyle = window.scrollY > 20;
+      header.classList.toggle('bg-blsck/90', shouldApplyStyle);
+      header.classList.toggle('backdrop-blur-md', shouldApplyStyle);
+      header.classList.toggle('shadow-sm', shouldApplyStyle);
+    });
+  });
+</script>
+
+<style>
+  /* Efecto glassmorphism moderno */
+  .bg-white\/90 {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+  .backdrop-blur-md {
+    backdrop-filter: blur(8px) !important;
+  }
+</style>
